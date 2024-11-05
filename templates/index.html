@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>{{title}}</h1> <!-- Variabel i html -->
+  {% if show_paragraph %} <!-- IF-sats för "conditional rendering" notera end-blocket! -->
+    <p>Den här paragrafen visas ibland!</p>
+  {% endif %}
+  <p>Städer</p>
+  <ul>
+    {% for city in cities %} <!-- For-loop för att loopa igenom en lista -->
+      <li>{{city}}</li>
+    {% endfor %}
+  </ul>
+  <!-- Action avgör till vilken endpoint allt ska skickas, method vilken metod -->
+  <form action="/submit" method="post">
+    <input type="text" name="email" placeholder="Skriv in din email här"> <!-- Ett inputfält, name är nyckeln, placeholder är placeholdertext. -->
+    <button type="submit">Skicka in</button> <!-- Varje formulär behöver en knapp med typen submit för att kunna skickas in. -->
+  </form>
+</body>
+</html>
+</html>
